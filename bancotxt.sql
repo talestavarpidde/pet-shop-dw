@@ -125,27 +125,3 @@ INSERT INTO `tipo_paciente` (`especie`, `porte`) VALUES
 ('Cachorro', 'Médio'),
 ('Gato', 'Pequeno'),
 ('Cachorro', 'Grande');
-
--- 2. Inserir donos (usuários do sistema / clientes)
-INSERT INTO `dono` (`nome_dono`, `data_nascimento_dono`, `cpf`, `endereco`, `email`, `senha`, `foto_dono`, `telefone`) VALUES
-('Ana Souza', '1995-05-12', '111.222.333-44', 'Rua das Flores, 123', 'ana@email.com', '$2y$10$exemploDeHashDeSenhaSegura1', 'ana.jpg', '(11) 98888-1111'),
-('Carlos Silva', '1988-10-25', '222.333.444-55', 'Av. Central, 456', 'carlos@email.com', '$2y$10$exemploDeHashDeSenhaSegura2', 'carlos.jpg', '(11) 97777-2222');
-
--- 3. Inserir pacientes (pets vinculados a um tipo e a um dono)
-INSERT INTO `paciente` (`foto_paciente`, `nome_paciente`, `sexo`, `data_nascimento_paciente`, `tipo_paciente_idtipo_paciente`, `dono_iddono`) VALUES
-('mel.jpg', 'Mel', 'Fêmea', '2021-03-15', 1, 1),
-('thor.jpg', 'Thor', 'Macho', '2020-07-20', 3, 2);
-
--- 4. Inserir serviços de estética (opções que podem ser selecionadas via formulário/checkbox)
-INSERT INTO `servico_estetica` (`servicos`, `preco`) VALUES
-('Banho completo', 50.00),
-('Tosa higiênica', 35.00),
-('Corte de unhas', 20.00),
-('Hidratação de pelos', 45.00);
-
--- 5. Inserir serviços solicitados (tabela relacional entre paciente e os serviços escolhidos)
-INSERT INTO `servico_solicitado` (`idpaciente`, `idservico_estetica`) VALUES
-(1, 1), -- Paciente 1 (Mel) pediu Banho completo
-(1, 2), -- Paciente 1 (Mel) pediu Tosa higiênica
-(2, 1), -- Paciente 2 (Thor) pediu Banho completo
-(2, 3); -- Paciente 2 (Thor) pediu Corte de unhas
