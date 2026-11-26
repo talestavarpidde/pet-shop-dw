@@ -33,5 +33,4 @@
     mysqli_stmt_bind_param($comando, "ssssssss", $nome, $data_nascimento, $cpf, $endereco, $email, $nova_senha, $novo_nome, $telefone);
     mysqli_stmt_execute($comando);
 
-    header("Location: ../index.php");
-    
+    header("Location: index.php");
