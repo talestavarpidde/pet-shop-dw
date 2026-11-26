@@ -28,7 +28,7 @@
         <select name="raca" id="raca" required>
             <?php
             
-            require_once("../conexao.php");
+            require_once("conexao.php");
             
             $sql = "SELECT * FROM tipo_paciente;";
             

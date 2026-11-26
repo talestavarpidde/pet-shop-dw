@@ -4,7 +4,7 @@ require_once "conexao.php";
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$sql = "select * from usuario WHERE email = ?";
+$sql = "select * from dono WHERE email = ?";
 $comando = mysqli_prepare($conexao, $sql);
 
 mysqli_stmt_bind_param($comando, "s", $email);
@@ -19,17 +19,17 @@ if ($quantidade == 1) {
 
     if (password_verify($senha, $senha_banco)) {
         $email = $linha['email'];
-        $idusuario = $linha['idusuario'];
-        $foto = $linha['foto'];
-        $nome = $linha['nome_dono'];
+        $iddono = $linha['iddono'];
+        $foto = $linha['foto_dono'];
+        $nome_dono = $linha['nome_dono'];
 
         session_start();
         $_SESSION['email'] = $email;
-        $_SESSION['nome'] = $nome;
-        $_SESSION['idusuario'] = $idusuario;
+        $_SESSION['nome_dono'] = $nome_dono;
+        $_SESSION['iddono'] = $iddono;
         $_SESSION['foto'] = $foto;
 
-        header("Location: principal.php");
+        header("Location: home.php");
     } else {
         header("Location: index.php?erro=login&email=$email");
     }
