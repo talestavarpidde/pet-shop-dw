@@ -7,6 +7,6 @@
 </head>
 <body>
     <a href="form_paciente.php">Formulario de Paciente</a>
-    
+    <a href="form_especies.php">Formulario de Espécies</a>
 </body>
 </html>
