@@ -1,13 +1,12 @@
 <?php
 require_once("conexao.php");
-require_once("verifica_sessao.php");
+require_once("verifica_sessão.php");
 
 $nome = $_POST['nome'];
 $sexo = $_POST['sexo'];
 $data_nascimento = $_POST['data_nascimento'];
 $tipo_paciente = $_POST['raca'];
 $iddono = $_SESSION['iddono'];
-$foto = $_POST['foto_paciente'];
  
     // SEPARA O NOME DO ARQUIVO 
     $nome_arquivo = $_FILES['foto_paciente']['name'];
@@ -26,9 +25,10 @@ $foto = $_POST['foto_paciente'];
 
     // MOVE PRO CAMINHO DE DESTINO
     move_uploaded_file($caminho_temporario, $caminho_destino);
-   $sql = "INSERT INTO paciente (foto_paciente,nome_paciente,sexo,data_nacimento_paciente,tipo_paciente_idtipo_paciente,dono_iddono) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $comando = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($comando, "ssssii", $foto, $nome, $sexo, $data_nascimento, $idtipo_paciente, $iddono,);
-    mysqli_stmt_execute($comando);
 
+    $sql = "INSERT INTO paciente (foto_paciente, nome_paciente, sexo, data_nascimento_paciente, tipo_paciente_idtipo_paciente, dono_iddono) VALUES (?, ?, ?, ?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, "ssssii", $caminho_destino, $nome, $sexo, $data_nascimento, $tipo_paciente, $iddono);
+    mysqli_stmt_execute($comando);
     header("Location: index.php");
