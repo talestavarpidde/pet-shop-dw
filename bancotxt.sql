@@ -125,3 +125,12 @@ INSERT INTO `tipo_paciente` (`especie`, `porte`) VALUES
 ('Cachorro', 'Médio'),
 ('Gato', 'Pequeno'),
 ('Cachorro', 'Grande');
+
+
+INSERT INTO `pet_shop_ib`.`servico_estetica` (`servicos`, `preco`) VALUES
+('Banho Tradicional', 65.00),
+('Tosa Higiênica', 40.00),
+('Tosa Completa (Máquina ou Tesoura)', 95.00),
+('Combo Banho + Tosa Completa', 130.00),
+('Hidratação Profunda da Pelagem', 50.00),
+('Corte de Unhas e Limpeza de Ouvidos', 30.00);

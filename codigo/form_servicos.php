@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="save_servicos.php" method="post">
         Serviço:
         <input type="text" name="servicos"><br>
         Preço:
-        <input type="number" name="preco"><br>
+        <input type="number" name="preco" step="0.01"><br>
         <input type="submit" value="cadastras">
     </form>
 </body>
