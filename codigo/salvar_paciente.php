@@ -31,4 +31,4 @@ $iddono = $_SESSION['iddono'];
     
     mysqli_stmt_bind_param($comando, "ssssii", $caminho_destino, $nome, $sexo, $data_nascimento, $tipo_paciente, $iddono);
     mysqli_stmt_execute($comando);
-    header("Location: index.php");
+    header("Location: home.php");
