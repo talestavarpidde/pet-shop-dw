@@ -15,7 +15,7 @@ $iddono = $_SESSION['iddono'];
     <form action="form_pedidos.php" method="post">
 
         Escolha o seu pet: <br>
-        <select name="idpaciente">
+        <select name="idpaciente" required>
             <?php
             $sql = "SELECT * FROM paciente WHERE dono_iddono = ?;";
             
@@ -46,6 +46,7 @@ $iddono = $_SESSION['iddono'];
     ?>
         <h2>Serviços de Estética Disponíveis</h2>
         <form action="save_pedido.php" method="post">
+            <input type="hidden" name="idpaciente" value="<?php echo (int) $idpaciente; ?>">
 
             <?php
             while ($servico = mysqli_fetch_array($servicos)) {

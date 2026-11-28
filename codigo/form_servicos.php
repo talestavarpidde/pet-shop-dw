@@ -9,9 +9,9 @@
 <body>
     <form action="save_servicos.php" method="post">
         Serviço:
-        <input type="text" name="servicos"><br>
+        <input type="text" name="servicos" required><br>
         Preço:
-        <input type="number" name="preco" step="0.01"><br>
+        <input type="number" name="preco" step="0.01" min="0" required><br>
         <input type="submit" value="cadastras">
     </form>
 </body>
