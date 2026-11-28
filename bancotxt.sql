@@ -116,21 +116,79 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-
-
 USE `pet_shop_ib`;
 
--- 1. Inserir tipos de pacientes (espécies e portes)
+-- -----------------------------------------------------
+-- 1. 10 registros na tabela `tipo_paciente`
+-- -----------------------------------------------------
 INSERT INTO `tipo_paciente` (`especie`, `porte`) VALUES
+('Cachorro', 'Pequeno'),
 ('Cachorro', 'Médio'),
+('Cachorro', 'Grande'),
+('Cachorro', 'Gigante'),
 ('Gato', 'Pequeno'),
-('Cachorro', 'Grande');
+('Gato', 'Médio'),
+('Gato', 'Grande'),
+('Coelho', 'Pequeno'),
+('Porquinho-da-índia', 'Pequeno'),
+('Furão', 'Pequeno');
 
+-- -----------------------------------------------------
+-- 2. 10 registros na tabela `dono`
+-- -----------------------------------------------------
+INSERT INTO `dono` (`nome_dono`, `data_nascimento_dono`, `cpf`, `endereco`, `email`, `senha`, `foto_dono`, `telefone`) VALUES
+('Ana Clara Souza', '1995-04-12', '111.222.333-01', 'Rua das Flores, 123, Centro', 'ana.souza@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4301'),
+('Carlos Eduardo Lima', '1988-09-25', '222.333.444-02', 'Avenida Brasil, 1500, Jardins', 'carlos.lima@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4302'),
+('Mariana Costa', '1992-12-03', '333.444.555-03', 'Rua XV de Novembro, 89, Bairro Alto', 'mariana.costa@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4303'),
+('Lucas Mendes', '1990-07-19', '444.555.666-04', 'Rua da Paz, 45, Vila Nova', 'lucas.mendes@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4304'),
+('Beatriz Oliveira', '1998-02-14', '555.666.777-05', 'Alameda Santos, 320, Bela Vista', 'beatriz.oliveira@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4305'),
+('Rafael Santos', '1985-11-30', '666.777.888-06', 'Rua Augusta, 910, Consolação', 'rafael.santos@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4306'),
+('Juliana Pereira', '1993-06-08', '777.888.999-07', 'Rua das Acácias, 74, Jardim Botânico', 'juliana.pereira@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4307'),
+('Fernando Alves', '1982-03-22', '888.999.000-08', 'Avenida Paulista, 2100, Cerqueira César', 'fernando.alves@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4308'),
+('Camila Rocha', '1996-10-15', '999.000.111-09', 'Rua Vergueiro, 550, Liberdade', 'camila.rocha@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4309'),
+('Gustavo Ferreira', '1989-01-28', '000.111.222-10', 'Rua Oscar Freire, 412, Pinheiros', 'gustavo.ferreira@email.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, '(11) 98765-4310');
 
-INSERT INTO `pet_shop_ib`.`servico_estetica` (`servicos`, `preco`) VALUES
+-- -----------------------------------------------------
+-- 3. 10 registros na tabela `paciente`
+-- -----------------------------------------------------
+INSERT INTO `paciente` (`foto_paciente`, `nome_paciente`, `sexo`, `data_nascimento_paciente`, `tipo_paciente_idtipo_paciente`, `dono_iddono`) VALUES
+(NULL, 'Thor', 'Macho', '2021-05-10', 2, 1),
+(NULL, 'Mel', 'Fêmea', '2022-08-15', 5, 2),
+(NULL, 'Zeus', 'Macho', '2020-01-20', 3, 3),
+(NULL, 'Luna', 'Fêmea', '2023-03-11', 1, 4),
+(NULL, 'Bob', 'Macho', '2019-11-05', 4, 5),
+(NULL, 'Mia', 'Fêmea', '2021-07-22', 6, 6),
+(NULL, 'Max', 'Macho', '2022-02-18', 2, 7),
+(NULL, 'Nina', 'Fêmea', '2020-09-30', 1, 8),
+(NULL, 'Simba', 'Macho', '2023-06-14', 7, 9),
+(NULL, 'Bela', 'Fêmea', '2021-12-01', 8, 10);
+
+-- -----------------------------------------------------
+-- 4. 10 registros na tabela `servico_estetica`
+-- -----------------------------------------------------
+INSERT INTO `servico_estetica` (`servicos`, `preco`) VALUES
 ('Banho Tradicional', 65.00),
 ('Tosa Higiênica', 40.00),
-('Tosa Completa (Máquina ou Tesoura)', 95.00),
-('Combo Banho + Tosa Completa', 130.00),
+('Tosa Completa na Máquina', 90.00),
+('Tosa na Tesoura', 120.00),
+('Combo Banho + Tosa Completa', 135.00),
 ('Hidratação Profunda da Pelagem', 50.00),
-('Corte de Unhas e Limpeza de Ouvidos', 30.00);
+('Corte de Unhas e Limpeza de Ouvidos', 30.00),
+('Banho Terapêutico / Medicamentoso', 85.00),
+('Desembolo e Remoção de Nós', 45.00),
+('Ofurô Relaxante Pet', 80.00);
+
+-- -----------------------------------------------------
+-- 5. 10 registros na tabela `servico_solicitado`
+-- -----------------------------------------------------
+INSERT INTO `servico_solicitado` (`idpaciente`, `idservico_estetica`) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(3, 5),
+(4, 4),
+(5, 8),
+(6, 7),
+(7, 6),
+(8, 3),
+(9, 10);
