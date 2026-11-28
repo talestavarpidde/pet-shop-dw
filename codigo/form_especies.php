@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="save_especies.php" method="post">
+    <form class="formulario" action="save_especies.php" method="post">
         <label for="especie">Espécie:</label>
         <input type="text" name="especie" id="especie" required>
         <br>

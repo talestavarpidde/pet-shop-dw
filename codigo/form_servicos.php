@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="save_servicos.php" method="post">
+    <form class="formulario" action="save_servicos.php" method="post">
         Serviço:
         <input type="text" name="servicos" required><br>
         Preço:

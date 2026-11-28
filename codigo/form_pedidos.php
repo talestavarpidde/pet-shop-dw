@@ -12,7 +12,7 @@ $iddono = $_SESSION['iddono'];
     <title>Solicitar Serviço de Estética</title>
 </head>
 <body>
-    <form action="form_pedidos.php" method="post">
+    <form class="formulario" action="form_pedidos.php" method="post">
 
         Escolha o seu pet: <br>
         <select name="idpaciente" required>
@@ -45,7 +45,7 @@ $iddono = $_SESSION['iddono'];
         $servicos = mysqli_stmt_get_result($comando);
     ?>
         <h2>Serviços de Estética Disponíveis</h2>
-        <form action="save_pedido.php" method="post">
+        <form class="formulario" action="save_pedido.php" method="post">
             <input type="hidden" name="idpaciente" value="<?php echo (int) $idpaciente; ?>">
 
             <?php

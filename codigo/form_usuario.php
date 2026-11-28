@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Novo Usuário</h1>
-    <form action="save_usuario.php" method="post" enctype="multipart/form-data">
+    <form class="formulario" action="save_usuario.php" method="post" enctype="multipart/form-data">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
         <br><br>

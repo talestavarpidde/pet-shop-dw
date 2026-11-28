@@ -10,7 +10,7 @@
     <div>
         <H1>Império dos Bichos</H1>
         <h5>Bem-Vindo</h5>
-        <form action="verifica_login.php" method="post">
+        <form class="formulario" action="verifica_login.php" method="post">
             email:<br>
             <input type="email" name="email" required>
             <br>
@@ -19,7 +19,7 @@
             <br>
             <input type="submit" value="Entrar">
         </form>
-        <a href="form_usuario.php">Cadastre-se</a>
+        <a class="link-menu" href="form_usuario.php">Cadastre-se</a>
     </div>
 </body>
 </html>
