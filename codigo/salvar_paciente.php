@@ -1,6 +1,6 @@
 <?php
 require_once("conexao.php");
-require_once("verifica_sessão.php");
+require_once("verifica_sessao.php");
 
 $nome = $_POST['nome'];
 $sexo = $_POST['sexo'];
